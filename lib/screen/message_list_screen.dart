@@ -13,11 +13,10 @@ class MessageListScreen extends StatefulWidget {
 
 class _MessageListScreenState extends State<MessageListScreen> {
   TextEditingController controller = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('메세지 목록')),
+      appBar: AppBar(title: const Text('메세지 목록'),  backgroundColor: Colors.green.shade300),
       body: StreamBuilder<List<MessageModel>>(
         stream: streamMessages(), //중계하고 싶은 Stream을 넣는다.
         builder: (context, asyncSnapshot) {

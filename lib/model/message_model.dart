@@ -22,6 +22,7 @@ class MessageModel {
 
   Map<String,dynamic> toMap(){
     Map<String,dynamic> data = {};
+    data['id']=id;
     data['content']=content;
     data['sendDate']=sendDate;
     return data;
