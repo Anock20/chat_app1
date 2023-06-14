@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app1/screen/searchPage.dart';
 import 'package:chat_app1/main.dart';
+
+import 'MainPage.dart';
 //import 'package:flutter_localizations/flutter_localizations.dart';
 
 

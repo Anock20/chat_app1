@@ -7,6 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:chat_app1/main.dart';
 import 'package:chat_app1/screen/searchPage.dart';
 
+import 'MainPage.dart';
+
 class EditProfile extends StatefulWidget {
   _EditProfileState createState() => _EditProfileState();
 }

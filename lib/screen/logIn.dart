@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'MainPage.dart';
 import 'register.dart'; //회원가입 페이지로 연결
 import 'package:chat_app1/main.dart';
 

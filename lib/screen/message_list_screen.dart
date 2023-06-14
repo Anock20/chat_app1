@@ -16,7 +16,14 @@ class MessageListScreen extends StatefulWidget {
 }
 
 class _MessageListScreenState extends State<MessageListScreen> {
-  String user = 'me';
+  int user = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    user = 0;
+  }
+
   TextEditingController controller = TextEditingController();
 
   @override
@@ -41,14 +48,13 @@ class _MessageListScreenState extends State<MessageListScreen> {
               padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
               itemCount: messages.length,
               itemBuilder: (context, index) {
-                bool isFromMe = user == 'me';
+                bool isFromMe = user % 2 == 0;
+                user++;
                 return Container(
                   margin: EdgeInsets.fromLTRB(5, 5, 5, 5), // Adjusted margin
                   child: MyChatBubble(
                     color: Colors.grey.shade300,
-
-                    alignment:
-                    isFromMe ? Alignment.topRight : Alignment.topLeft,
+                    alignment: isFromMe ? Alignment.topRight : Alignment.topLeft,
                     child: Container(
                       margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                       child: Text(
@@ -67,6 +73,7 @@ class _MessageListScreenState extends State<MessageListScreen> {
       bottomNavigationBar: getInputWidget(),
     );
   }
+
   Widget getInputWidget() {
     return Container(
       height: 60,
@@ -159,8 +166,9 @@ class _MessageListScreenState extends State<MessageListScreen> {
     try {
       MessageModel messageModel = MessageModel(
         content: controller.text,
-        sender: user,
-        sendDate: Timestamp.now(), id: '',
+        sender: user.toString(),
+        sendDate: Timestamp.now(),
+        id: '',
       );
 
       FirebaseFirestore firestore = FirebaseFirestore.instance;

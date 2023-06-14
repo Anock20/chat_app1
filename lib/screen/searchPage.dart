@@ -8,6 +8,9 @@ import 'package:chat_app1/main.dart';
 import 'package:chat_app1/screen/editProfile.dart';
 import 'package:chat_app1/screen/showProfile2.dart';
 
+import 'MainPage.dart';
+import 'message_list_screen.dart';
+
 // import 'package:flutter_localizations/flutter_localizations.dart';
 
 
@@ -145,7 +148,7 @@ class _SearchPageState extends State<SearchPage> {
                               MaterialPageRoute(builder: (context) => showProfile2()),
                             );
                           }
-                          else if(inputId == "SEOHO"){
+                          else if (inputId == "SEOHO") {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => showProfile()),

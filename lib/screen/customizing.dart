@@ -2,6 +2,8 @@ import 'package:chat_app1/main.dart';
 import 'package:chat_app1/screen/register.dart';
 import 'package:flutter/material.dart';
 
+import 'MainPage.dart';
+
 
 class Custom extends StatelessWidget {
 
