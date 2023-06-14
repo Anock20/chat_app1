@@ -1,5 +1,5 @@
 import 'dart:developer';
-
+import 'package:chat_app1/screen/donate_select.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app1/model/message_model.dart';
@@ -24,7 +24,7 @@ class _MessageListScreenState extends State<MessageListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Find Me', textAlign: TextAlign.center),
-        backgroundColor: Colors.green.shade300,
+        backgroundColor: Colors.lightGreen.shade300,
       ),
       body: StreamBuilder<List<MessageModel>>(
         stream: streamMessages(),
@@ -38,21 +38,22 @@ class _MessageListScreenState extends State<MessageListScreen> {
           } else {
             List<MessageModel> messages = asyncSnapshot.data!;
             return ListView.builder(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
               itemCount: messages.length,
               itemBuilder: (context, index) {
                 bool isFromMe = user == 'me';
                 return Container(
-                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10), // Adjusted margin
+                  margin: EdgeInsets.fromLTRB(5, 5, 5, 5), // Adjusted margin
                   child: MyChatBubble(
-                    color: Colors.blue.shade400,
+                    color: Colors.grey.shade300,
+
                     alignment:
                     isFromMe ? Alignment.topRight : Alignment.topLeft,
                     child: Container(
-                      margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                      margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                       child: Text(
                         messages[index].content,
-                        style: TextStyle(fontSize: 35, color: Colors.black),
+                        style: TextStyle(fontSize: 20, color: Colors.black),
                       ),
                     ),
                     isFromMe: isFromMe,
@@ -150,7 +151,7 @@ class _MessageListScreenState extends State<MessageListScreen> {
   void _onPressedExitButton() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ExitPage()),
+      MaterialPageRoute(builder: (context) => DonateSelect()),
     );
   }
 

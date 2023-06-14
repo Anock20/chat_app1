@@ -23,7 +23,7 @@ class MyChatBubble extends StatelessWidget {
       alignment: alignment,
       backGroundColor: color,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(3.0),
         child: child,
       ),
     );
